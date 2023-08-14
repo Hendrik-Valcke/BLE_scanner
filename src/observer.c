@@ -16,6 +16,13 @@ static void device_found(const bt_addr_le_t *addr, int8_t rssi, uint8_t type,
 {
 	char addr_str[BT_ADDR_LE_STR_LEN];
 
+	/*type: BT_GAP_ADV_TYPE_ 	0 means Scannable and connectable advertising.
+								1 means Directed connectable advertising.
+								2 means Non-connectable and scannable advertising.
+								3 means Non-connectable and non-scannable advertising.
+								4 means Additional advertising data requested by an active scanner.
+								5 means Extended advertising, see advertising properties.
+	*/
 	bt_addr_le_to_str(addr, addr_str, sizeof(addr_str));
 	printk("Device found: %s (RSSI %d), type %u, AD data len %u\n",
 	       addr_str, rssi, type, ad->len);
@@ -109,4 +116,7 @@ int observer_start(void)
 	printk("Started scanning...\n");
 
 	return 0;
+	
+
+
 }
