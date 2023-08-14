@@ -1,5 +1,7 @@
 .. _bluetooth-observer-sample:
 
+based on example project:  
+
 Bluetooth: Observer
 ###################
 
